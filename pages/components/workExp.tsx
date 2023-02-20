@@ -25,7 +25,7 @@ function WorkExp({experiences}: Props) {
         scrollbar-thumb-[#F7AB0A]/80'>
             {experiences?.map(experience =>(
                 <ExperienceCard
-                key={experience._id}
+                key={Number(experience._id)}
                 experience={experience}
                 />
 

@@ -29,12 +29,12 @@ function Skills({ skills }: Props) {
             
             <div className='grid md:grid-cols-4 grid-cols-3 gap-5 relative top-28 '>     
                 {skills?.slice(0, skills.length / 2).map(skill => (
-                    <SkillKeys key={skill._id} skill={skill} />
+                    <SkillKeys key={Number(skill._id)} skill={skill} />
 
                 ))}
 
                 {skills?.slice(skills.length / 2, skills.length).map(skill => (
-                    <SkillKeys key={skill._id} skill={skill} directionLeft/>
+                    <SkillKeys key={Number(skill._id)} skill={skill} directionLeft/>
 
                 ))}
             </div>
