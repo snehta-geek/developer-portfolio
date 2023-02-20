@@ -24,9 +24,10 @@ function Project({ projects }: Props) {
             <div className='relative w-full flex overflow-x-scroll overflow-y-hidden
         snap-x snap-mandatory z-20 scrollbar scrollbar-thin scrollbar-track-gray-400/20
         scrollbar-thumb-[#F7AB0A]/80'>
-                {projects?.map((prj, ind) => (
-                    <div key={prj._id} className='w-screen flex-shrink-0 snap-center flex flex-col space-y-5
+                {projects?.map((prj, ind) => (                    
+                    <div key={Number(prj._id)} className='w-screen flex-shrink-0 snap-center flex flex-col space-y-5
                     items-center justify-center p-20 md:p-44 h-screen relative top-60 md:top-10'>
+                        <>
                         <motion.img
                             initial={{
                                 y: -300,
@@ -53,7 +54,7 @@ function Project({ projects }: Props) {
                                 {prj?.technologies?.map((technology) => (
                                     <img className='h-10 w-10'
                                         src={urlFor(technology?.image).url()}
-                                        key={technology._id}
+                                        key={Number(technology._id)}
                                         alt=""
                                     />
                                 ))}
@@ -63,11 +64,12 @@ function Project({ projects }: Props) {
                                 {prj?.summary}
                             </p>
                         </div>
+                        </>
                     </div>
-
+                    
                 ))}
 
-            </div>
+</div>
 
             <div className='w-full absolute top-[30%] bg-[#F7AB0A]/10 left-0 h-[500px]
         -skew-y-12'/>

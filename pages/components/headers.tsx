@@ -32,7 +32,7 @@ function Headers({ socials }: Props) {
 
                 {socials.map((social) => (
                     <SocialIcon
-                        key={social._id}
+                        key={Number(social._id)}
                         url={social.url}
                         fgColor='gray'
                         bgColor='transparent'
